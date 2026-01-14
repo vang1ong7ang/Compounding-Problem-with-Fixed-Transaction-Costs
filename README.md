@@ -14,7 +14,7 @@ $$
 
 which maps the current principal $p \in \mathbb{R}$ to a waiting time $s(p) \in \mathbb{R}_{\ge 0}$ until the next compounding action.
 
-$s$ is best if it eventually dominates any alternative strategy in terminal principal: for any other compounding strategy function $s_\star$, there exists a horizon threshold $t_\ast $ such that $\forall t > t_\ast \in \mathbb{R}_{\ge 0}$:
+$s$ is best if it eventually dominates any alternative strategy in terminal principal: for any other compounding strategy function $s_\star$, there exists a horizon threshold $t_\ast$ such that $\forall t > t_\ast \in \mathbb{R}_{\ge 0}$:
 
 $$
 y_s(t, 1) \ge y_{s_\star}(t, 1)
