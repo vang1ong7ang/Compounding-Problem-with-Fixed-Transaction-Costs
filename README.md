@@ -1,34 +1,32 @@
 # Compounding Problem with Fixed Transaction Costs
 
-TODO INTRO
+## The Introduction
+
+Compound interest is one of the core ideas in financial mathematics: gains themselves generate gains. In the idealized limit where compounding happens continuously, growth becomes exponential, and the constant e appears naturally as the fundamental “unit” of smooth multiplicative growth.
+
+Real-world compounding, however, is not frictionless: reinvesting incurs costs. Some fees scale with the traded amount and can often be viewed, in a simplified model, as effectively reducing the nominal interest rate; they do not introduce a sharp “when to act” choice. To isolate that timing tradeoff, we focus on the case where each compounding action pays a constant cost, so acting more often captures growth sooner but also pays the fixed cost more often.
+
+The goal of this note is to make that tradeoff precise and to identify an optimal rule for when to compound, based only on the current principal.
 
 ## The Problem
 
-Fix the nominal interest rate $r \in \mathbb{R}_{\ge 0}$ and the compounding cost $c \in \mathbb{R}_{\ge 0}$.
+All variables are reals unless stated otherwise. Fix the nominal interest rate $r > 0$ and the compounding cost $c > 0$.
 
-Find a best compounding strategy function
-
-$$
-s: \mathbb{R} \rightarrow \mathbb{R}_{\ge 0}
-$$
-
-which maps the current principal $p \in \mathbb{R}$ to a waiting time $s(p) \in \mathbb{R}_{\ge 0}$ until the next compounding action.
-
-$s$ is best if it eventually dominates any alternative strategy in terminal principal: for any other compounding strategy function $s_\star$, there exists a horizon threshold $t_\ast$ such that $\forall t > t_\ast \in \mathbb{R}_{\ge 0}$:
+Given an initial principal $p_0 > 0$, find a best sequence of waiting times $(t_i)_{i\ge 0}$ with $t_i > 0$. Starting from $p_0$, you wait $t_i$ and then perform a compounding action, updating the principal by
 
 $$
-y_s(t, 1) \ge y_{s_\star}(t, 1)
+p_{i+1} = p_i + p_i r t_i - c.
 $$
 
-where $y_s(t, p)$ denotes the terminal principal when starting from principal $p$ with remaining time $t$ and following strategy $s$. At each step, the strategy chooses a waiting time $w = s(p)$; if $w$ fits within the remaining horizon, you wait $w$ time units and then update the principal by applying the compounding operation. If $w$ does not fit, no further actions are taken and the process terminates.
+we say $(t_i)$ is best if, for any other sequence $(\tau_i)_{i\ge 0}$ with $\tau_i > 0$, it eventually dominates $(\tau_i)$: there exists a threshold $T > 0$ such that for all $m,n \ge 0$,
 
 $$
-y_s(t, p) =
-\begin{cases}
-y_s(t - w, p + prw - c) & 0 \le w = s(p) \le t \\
-p & \text{else}
-\end{cases}
+\sum_{i=0}^{n} t_i > \sum_{i=0}^{m} \tau_i > T
+\implies
+p_{n+1} > \rho_{m+1}.
 $$
+
+where $(\rho_i)$ is defined by $\rho_0 := p_0$ and $\rho_{i+1} = \rho_i + \rho_i r \tau_i - c$.
 
 # The Solution
 
