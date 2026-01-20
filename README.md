@@ -12,26 +12,45 @@ The goal of this note is to make that tradeoff precise and to identify an optima
 
 All variables are reals unless stated otherwise. Fix the nominal interest rate $r > 0$ and the compounding cost $c > 0$.
 
-Given an initial principal $p_0 > 0$, find a best sequence of waiting times $(t_i)_{i\ge 0}$ with $t_i > 0$. Starting from $p_0$, you wait $t_i$ and then perform a compounding action, updating the principal by
+Given an initial principal $p_0 > 0$, find an optimal sequence of waiting times $(t_i)_{i\ge 0}$ with $t_i > 0$. Starting from $p_0$, you wait $t_i$ and then perform a compounding action, updating the principal by
 
 $$
-p_{i+1} = p_i + p_i r t_i - c.
+p_{i+1} = p_i + p_i r t_i - c
 $$
 
-we say $(t_i)$ is best if, for any other sequence $(\tau_i)_{i\ge 0}$ with $\tau_i > 0$, it eventually dominates $(\tau_i)$: there exists a threshold $T > 0$ such that for all $m,n \ge 0$,
+We say $(t_i)$ is optimal if, for any other sequence $(\tau_i)_{i\ge 0}$ with $\tau_i > 0$, it eventually dominates $(\tau_i)$: there exists a threshold $T > 0$ such that for all $m,n \ge 0$,
 
 $$
 \sum_{i=0}^{n} t_i > \sum_{i=0}^{m} \tau_i > T
 \implies
-p_{n+1} > \rho_{m+1}.
+p_{n+1} > \rho_{m+1}
 $$
 
 where $(\rho_i)$ is defined by $\rho_0 := p_0$ and $\rho_{i+1} = \rho_i + \rho_i r \tau_i - c$.
 
 # The Solution
 
-TODO
+The waiting times satisfy, for all $i \ge 0$,
 
 $$
-s(p+prs(p)-c)=s(p)-\frac{c}{pr}
+t_{i+1} = t_i - \frac{c}{p_i r}.
 $$
+
+Choose $t_0$ so that $t_i \to 0$ as $i\to\infty$; equivalently,
+
+$$
+t_0 = \frac{1}{r}\sum_{i=0}^{\infty} \frac{c}{p_i}.
+$$
+
+# The Analysis
+
+TODO PROOF AND LEMMAS
+
+# The Experiment
+
+I implemented a small game to simulate the compounding process, along with a few numerical routines for solving/approximating the defining equations. See [exponium](https://github.com/vang1ong7ang/exponium).
+
+# The Conclusion
+
+Damn greedy.
+
