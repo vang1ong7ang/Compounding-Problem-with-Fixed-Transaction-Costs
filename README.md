@@ -29,3 +29,11 @@ y_s(t - w, p + prw - c) & 0 \le w = s(p) \le t \\
 p & \text{else}
 \end{cases}
 $$
+
+# The Solution
+
+TODO
+
+$$
+s(\frac{c}{p+prs(p)-c})=s(p)-\frac{c}{pr}
+$$
