@@ -35,5 +35,5 @@ $$
 TODO
 
 $$
-s(\frac{c}{p+prs(p)-c})=s(p)-\frac{c}{pr}
+s(p+prs(p)-c)=s(p)-\frac{c}{pr}
 $$
