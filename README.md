@@ -19,6 +19,7 @@ p_{i+1} = p_i + p_i r t_i - c
 $$
 
 We say $(t_i)$ is optimal if, for any other sequence $(\tau_i)_{i\ge 0}$ with $\tau_i > 0$, it is never dominated by $(\tau_i)$: there exists a threshold $T > 0$ such that for all $m,n \ge 0$,
+
 $$
 \sum_{i=0}^{n} t_i > \sum_{i=0}^{m} \tau_i > T
 \implies
