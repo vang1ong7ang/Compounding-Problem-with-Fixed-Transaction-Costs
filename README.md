@@ -33,13 +33,13 @@ where $(\rho_i)$ is defined by $\rho_0 := p_0$ and $\rho_{i+1} = \rho_i + \rho_i
 The waiting times satisfy, for all $i \ge 0$,
 
 $$
-t_{i+1} = t_i - \frac{c}{p_i r}.
+t_{i+1} = t_i - \frac{c}{p_i r}
 $$
 
 Choose $t_0$ so that $t_i \to 0$ as $i\to\infty$; equivalently,
 
 $$
-t_0 = \frac{1}{r}\sum_{i=0}^{\infty} \frac{c}{p_i}.
+t_0 = \frac{1}{r}\sum_{i=0}^{\infty} \frac{c}{p_i}
 $$
 
 # The Analysis
