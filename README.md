@@ -46,15 +46,31 @@ $$
 
 # The Analysis
 
-TODO PROOF AND LEMMAS
+## Correctness
 
-The waiting times satisfy, for all $i \ge 0$,
+Perturb two adjacent waiting times by an amount $\epsilon$ while keeping their sum fixed:
+
+$$
+\tau_i = t_i + \epsilon
+$$
+
+$$
+\tau_{i+1} = t_{i+1} - \epsilon
+$$
+
+Expanding to first order in $\epsilon$ (ignoring $O(\epsilon^2)$), one obtains
+
+$$
+\frac{\rho_{i+2} - p_{i+2}}{r\epsilon} = p_irt_{i+1} - p_irt_i + c
+$$
+
+For optimality, this first-order change must vanish, hence
 
 $$
 t_{i+1} = t_i - \frac{c}{p_i r}
 $$
 
-Choose $t_0$ so that $t_i \to 0$ as $i\to\infty$; equivalently,
+Together with the boundary condition $t_i \to 0$ as $i\to\infty$, this is equivalent to
 
 $$
 t_0 = \frac{1}{r}\sum_{i=0}^{\infty} \frac{c}{p_i}
