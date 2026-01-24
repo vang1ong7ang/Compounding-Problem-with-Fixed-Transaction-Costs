@@ -58,7 +58,7 @@ $$
 \tau_{i+1} = t_{i+1} - \epsilon
 $$
 
-Expanding to first order in $\epsilon$ (ignoring $O(\epsilon^2)$), one obtains
+Expanding to first order in $\epsilon$ and ignoring $O(\epsilon^2)$, one obtains
 
 $$
 \frac{\rho_{i+2} - p_{i+2}}{r\epsilon} = p_irt_{i+1} - p_irt_i + c
@@ -70,10 +70,16 @@ $$
 t_{i+1} = t_i - \frac{c}{p_i r}
 $$
 
-Together with the boundary condition $t_i \to 0$ as $i\to\infty$, this is equivalent to
+With the boundary condition $t_i \to 0$ as $i\to\infty$, this is equivalent to
 
 $$
-t_0 = \frac{1}{r}\sum_{i=0}^{\infty} \frac{c}{p_i}
+t_i = \frac{1}{r}\sum_{j=i}^{\infty} \frac{c}{p_j}
+$$
+
+Let $x_i = r t_i$. Therefore,
+
+$$
+x_{i+1} - x_{i+2} = \frac{x_i - x_{i+1}}{1 + x_{i+1}}
 $$
 
 # The Experiment
