@@ -30,6 +30,24 @@ where $(\rho_i)$ is defined by $\rho_0 := p_0$ and $\rho_{i+1} = \rho_i + \rho_i
 
 # The Solution
 
+Solve for a sequence $(x_i)_{i\ge 0}$ satisfying
+
+$$
+x_{i+1} - x_{i+2} = \frac{x_i - x_{i+1}}{1 + x_{i+1}}
+$$
+
+with boundary conditions $x_0 - x_1 = \frac{c}{p_0}$ and $x_i \to 0$ as $i\to\infty$
+
+Set
+
+$$
+t_i = \frac{x_i}{r}
+$$
+
+# The Analysis
+
+TODO PROOF AND LEMMAS
+
 The waiting times satisfy, for all $i \ge 0$,
 
 $$
@@ -41,10 +59,6 @@ Choose $t_0$ so that $t_i \to 0$ as $i\to\infty$; equivalently,
 $$
 t_0 = \frac{1}{r}\sum_{i=0}^{\infty} \frac{c}{p_i}
 $$
-
-# The Analysis
-
-TODO PROOF AND LEMMAS
 
 # The Experiment
 
